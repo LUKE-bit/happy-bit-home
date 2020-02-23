@@ -7,35 +7,35 @@ struct xs
 {
 	char name[20];
 	int number;
-	int sum;//×ÜµÃ·Ö 
+	int sum;//æ€»å¾—åˆ† 
 	struct xs *next;
  };
 struct xs *head=(struct xs *)malloc(sizeof (struct xs));
  
-//ÓÃ»§½á¹¹Ìå
+//ç”¨æˆ·ç»“æž„ä½“
 struct user
 {
 	char username[20];
 	char usermima[20];
 };
-//³õÊ¼»¯
+//åˆå§‹åŒ–
 void addxs(struct xs *p)
 {
-	printf("ÇëÊäÈëÑ§ÉúÃû³Æ£º");
+	printf("è¯·è¾“å…¥å­¦ç”Ÿåç§°ï¼š");
 	fflush(stdin);
 	gets(p->name);
-	printf("ÇëÊäÈëÑ§ÉúºÅÂë: ");
+	printf("è¯·è¾“å…¥å­¦ç”Ÿå·ç : ");
 	scanf("%d",&p->number);
-	printf("ÇëÊäÈëÑ§Éú×ÜµÃ·Ö£º ");
+	printf("è¯·è¾“å…¥å­¦ç”Ÿæ€»å¾—åˆ†ï¼š ");
 	scanf("%d",&p->sum); 
 }
 
-//½çÃæÏµÍ³
+//ç•Œé¢ç³»ç»Ÿ
 void face();
 void face2();
 void search();
 void cutout();
-//¹¦ÄÜÏµÍ³
+//åŠŸèƒ½ç³»ç»Ÿ
 void mixlooking(struct xs *p);
 void lookingname(struct xs *p);
 void lookingnumber(struct xs *p);
@@ -54,7 +54,7 @@ void sort();
 int tongji(struct xs *head);
 void charu(struct xs* p0);
  
-//´´½¨Á´±í 
+//åˆ›å»ºé“¾è¡¨ 
 void create()
 {
 	int i=0;
@@ -64,20 +64,20 @@ void create()
 	{
 		system("cls");
 		pnew=(struct xs*)malloc(sizeof(struct xs));
-		printf("\n\n\t\t\t\t\tµÚ%dÑ§ÉúµÄÐÅÏ¢\n",++i);
+		printf("\n\n\t\t\t\t\tç¬¬%då­¦ç”Ÿçš„ä¿¡æ¯\n",++i);
 		addxs(pnew);
 	    pnew->next=head->next;
 	    head->next=pnew;
-		printf("\n\n\t\t\t\t\tÊÇ·ñ¼ÌÐøÌí¼ÓÑ§ÉúÐÅÏ¢?(Y/N)");
+		printf("\n\n\t\t\t\t\tæ˜¯å¦ç»§ç»­æ·»åŠ å­¦ç”Ÿä¿¡æ¯?(Y/N)");
 		getchar(); 
-		ch=getchar(); //½ÓÊÕY»òyÅÐ¶ÏÊÇ·ñÌí¼ÓÐÅÏ¢ 
+		ch=getchar(); //æŽ¥æ”¶Yæˆ–yåˆ¤æ–­æ˜¯å¦æ·»åŠ ä¿¡æ¯ 
 	}while(ch=='Y');
 }
-//Í³¼ÆÑ§Éú×ÜÊý
+//ç»Ÿè®¡å­¦ç”Ÿæ€»æ•°
 int tongji(struct xs *head)
 {
 	struct xs *p = head->next;
-	int count=0;    //Ñ§Éú×ÜÊý 
+	int count=0;    //å­¦ç”Ÿæ€»æ•° 
 	while(p!= NULL)
 	{
 		count++;
@@ -86,23 +86,23 @@ int tongji(struct xs *head)
 	return count;
 }
  
- //Ê×½çÃæ 
+ //é¦–ç•Œé¢ 
 void face()                                           
 {
     printf("\n\n\n\n\n\n");
     printf("                                  ********************************************\n");
     printf("                                  --------------------------------------------\n");
     printf("\n");
-    printf("                                  |         »¶Ó­Ê¹ÓÃÑ§Éú¹ÜÀíÏµÍ³          |\n");
+    printf("                                  |         æ¬¢è¿Žä½¿ç”¨å­¦ç”Ÿç®¡ç†ç³»ç»Ÿ          |\n");
     printf("\n");
     printf("                                  --------------------------------------------\n"); 
-    printf("                                  |           1-µÇÂ¼                         |\n");
-    printf("                                  |           2-×¢²á                         |\n");
-	printf("                                  |           3-ÍË³öÏµÍ³                     |\n");
+    printf("                                  |           1-ç™»å½•                         |\n");
+    printf("                                  |           2-æ³¨å†Œ                         |\n");
+	printf("                                  |           3-é€€å‡ºç³»ç»Ÿ                     |\n");
     printf("                                  ********************************************\n");
-    printf("\n                                ÇëÏÈµÇÂ¼»ò×¢²á"); 
+    printf("\n                                è¯·å…ˆç™»å½•æˆ–æ³¨å†Œ"); 
     printf("\n\n\n");
-    printf("ÇëÊäÈë£º ") ;
+    printf("è¯·è¾“å…¥ï¼š ") ;
     fflush(stdin);
     int choice;
     scanf("%d",&choice);
@@ -110,7 +110,7 @@ void face()
     {
     	case 1:
     		system("cls");
-    		denglu();                      //µÇÂ¼º¯Êý
+    		denglu();                      //ç™»å½•å‡½æ•°
 			system("cls");
 			face2() ;                      ///////////////////////////
 			break;
@@ -125,26 +125,26 @@ void face()
 	}
     
  } 
-void face2()                                           //´òÓ¡½çÃæ 2
+void face2()                                           //æ‰“å°ç•Œé¢ 2
 {
 	int n;
     printf("\n\n\n");
     printf("                                  ********************************************\n");
     printf("                                  --------------------------------------------\n");
     printf("\n");
-    printf("                                  |         »¶Ó­Ê¹ÓÃÑ§Éú¹ÜÀíÏµÍ³          |\n");
+    printf("                                  |         æ¬¢è¿Žä½¿ç”¨å­¦ç”Ÿç®¡ç†ç³»ç»Ÿ          |\n");
     printf("\n");
     printf("                                  --------------------------------------------\n"); 
-    printf("                                  |           1-ÐÅÏ¢Â¼Èë                     |\n");
-    printf("                                  |           2-²éÑ¯Ñ§ÉúÐÅÏ¢                 |\n");
-    printf("                                  |          *3-ÐÞ¸ÄÄ³¸öÑ§ÉúÐÅÏ¢             |\n");
-    printf("                                  |          *4-É¾³ýÄ³¸öÑ§ÉúÐÅÏ¢             |\n");
-    printf("                                  |          *5-ÔöÌíÐÂÑ§ÉúÐÅÏ¢               |\n");
-    printf("                                  |           6-ÏÔÊ¾ËùÓÐÐÅÏ¢                 |\n"); 
-    printf("                                  |           7-ÍË³öÏµÍ³²¢±£´æÐÅÏ¢           |\n"); 
+    printf("                                  |           1-ä¿¡æ¯å½•å…¥                     |\n");
+    printf("                                  |           2-æŸ¥è¯¢å­¦ç”Ÿä¿¡æ¯                 |\n");
+    printf("                                  |          *3-ä¿®æ”¹æŸä¸ªå­¦ç”Ÿä¿¡æ¯             |\n");
+    printf("                                  |          *4-åˆ é™¤æŸä¸ªå­¦ç”Ÿä¿¡æ¯             |\n");
+    printf("                                  |          *5-å¢žæ·»æ–°å­¦ç”Ÿä¿¡æ¯               |\n");
+    printf("                                  |           6-æ˜¾ç¤ºæ‰€æœ‰ä¿¡æ¯                 |\n"); 
+    printf("                                  |           7-é€€å‡ºç³»ç»Ÿå¹¶ä¿å­˜ä¿¡æ¯           |\n"); 
     printf("                                  ********************************************\n");
     printf("\n\n\n");
-    printf("ÇëÊäÈëÄãµÄÑ¡Ôñ£º\t");
+    printf("è¯·è¾“å…¥ä½ çš„é€‰æ‹©ï¼š\t");
     scanf("%d",&n);
     switch(n)
     {
@@ -152,7 +152,7 @@ void face2()                                           //´òÓ¡½çÃæ 2
     		system("cls");
     		create();       //////////////////////// 
     		fflush(stdin);
-    		printf("°´ÈÎÒâ¼ü·µ»Ø½çÃæ");
+    		printf("æŒ‰ä»»æ„é”®è¿”å›žç•Œé¢");
 			getch();
 			system("cls");
 			face2();
@@ -161,7 +161,7 @@ void face2()                                           //´òÓ¡½çÃæ 2
 			system("cls");
 			search();
 			fflush(stdin);
-			printf("°´ÈÎÒâ¼ü·µ»Ø½çÃæ");
+			printf("æŒ‰ä»»æ„é”®è¿”å›žç•Œé¢");
 			getch();
 			system("cls");
 			face2();
@@ -170,7 +170,7 @@ void face2()                                           //´òÓ¡½çÃæ 2
 			system("cls");
 			change(head);
 			fflush(stdin);
-			printf("°´ÈÎÒâ¼ü·µ»Ø½çÃæ");
+			printf("æŒ‰ä»»æ„é”®è¿”å›žç•Œé¢");
 			getch();
 			system("cls");
 			face2();
@@ -179,7 +179,7 @@ void face2()                                           //´òÓ¡½çÃæ 2
 			system("cls");
 			cutout();
 			fflush(stdin);
-			printf("°´ÈÎÒâ¼ü·µ»Ø½çÃæ");
+			printf("æŒ‰ä»»æ„é”®è¿”å›žç•Œé¢");
 			getch();
 			system("cls");
 			face2();
@@ -188,7 +188,7 @@ void face2()                                           //´òÓ¡½çÃæ 2
 			system("cls");
 			charu(head);
 			fflush(stdin);
-			printf("°´ÈÎÒâ¼ü·µ»Ø½çÃæ");
+			printf("æŒ‰ä»»æ„é”®è¿”å›žç•Œé¢");
 			getch();
 			system("cls");
 			face2();
@@ -197,7 +197,7 @@ void face2()                                           //´òÓ¡½çÃæ 2
 			system("cls");
 			print(head);
 			fflush(stdin);
-			printf("°´ÈÎÒâ¼ü·µ»Ø½çÃæ");
+			printf("æŒ‰ä»»æ„é”®è¿”å›žç•Œé¢");
 			getch();
 			system("cls");
 			face2();
@@ -209,26 +209,26 @@ void face2()                                           //´òÓ¡½çÃæ 2
 			break; 
 	}
  } 
-//²éÑ¯¹¦ÄÜÒ³Ãæ
+//æŸ¥è¯¢åŠŸèƒ½é¡µé¢
 void search() 
 {
 	int choice;
-	printf("\n\t\t\t\t\t                Ñ§ÉúÐÅÏ¢²éÑ¯           \n");
+	printf("\n\t\t\t\t\t                å­¦ç”Ÿä¿¡æ¯æŸ¥è¯¢           \n");
 	printf("\n\t\t\t\t\t|                                       |");
 	printf("\n\t\t\t\t\t|                                       |");
-    printf("\n\t\t\t\t\t|         1.°´ÕÕÑ§ÉúÃû³Æ½øÐÐ²éÑ¯        |");
+    printf("\n\t\t\t\t\t|         1.æŒ‰ç…§å­¦ç”Ÿåç§°è¿›è¡ŒæŸ¥è¯¢        |");
     printf("\n\t\t\t\t\t|                                       |");
 	printf("\n\t\t\t\t\t|                                       |");
-    printf("\n\t\t\t\t\t|         2.°´ÕÕÑ§ÉúÐòºÅ½øÐÐ²éÑ¯        |");
+    printf("\n\t\t\t\t\t|         2.æŒ‰ç…§å­¦ç”Ÿåºå·è¿›è¡ŒæŸ¥è¯¢        |");
 	printf("\n\t\t\t\t\t|                                       |"); 
     printf("\n\t\t\t\t\t|                                       |"); 
-	printf("\n\t\t\t\t\t|         3.»ìºÏ²éÑ¯                    |"); 
+	printf("\n\t\t\t\t\t|         3.æ··åˆæŸ¥è¯¢                    |"); 
 	printf("\n\t\t\t\t\t|                                       |"); 
 	printf("\n\t\t\t\t\t|                                       |");
-    printf("\n\t\t\t\t\t|         4.ÍË³ö                        |");
+    printf("\n\t\t\t\t\t|         4.é€€å‡º                        |");
 	printf("\n\t\t\t\t\t|                                       |"); 
 	printf("\n\t\t\t\t\t|_______________________________________|"); 
-	printf("\n\t\t\t\t\tÇëÊäÈë:");
+	printf("\n\t\t\t\t\tè¯·è¾“å…¥:");
 	scanf("%d",&choice);
 	switch(choice)
 	{
@@ -261,19 +261,19 @@ void search()
 			
 	}
  } 
-//É¾³ý½çÃæ 
+//åˆ é™¤ç•Œé¢ 
 void cutout()
 {
 	int choice;
-	printf("\n\n\t\t\t\t\t            Ñ§ÉúÐÅÏ¢É¾³ý              |\n"); 
+	printf("\n\n\t\t\t\t\t            å­¦ç”Ÿä¿¡æ¯åˆ é™¤              |\n"); 
 	printf("\n\t\t\t\t\t|                                       |");
-	printf("\n\t\t\t\t\t|         1.°´ÕÕÑ§ÉúÃû³ÆÉ¾³ý            |");
+	printf("\n\t\t\t\t\t|         1.æŒ‰ç…§å­¦ç”Ÿåç§°åˆ é™¤            |");
 	printf("\n\t\t\t\t\t|                                       |");
 	printf("\n\t\t\t\t\t|                                       |");
-	printf("\n\t\t\t\t\t|         2.·µ»ØÉÏÒ»²ã                  |");
+	printf("\n\t\t\t\t\t|         2.è¿”å›žä¸Šä¸€å±‚                  |");
 	printf("\n\t\t\t\t\t|                                       |");
 	printf("\n\t\t\t\t\t|_______________________________________|");
-	printf("\n\t\t\t\t\tÇëÑ¡Ôñ:");
+	printf("\n\t\t\t\t\tè¯·é€‰æ‹©:");
 	scanf("%d",&choice);
 	switch(choice)
 	{
@@ -281,7 +281,7 @@ void cutout()
 			system("cls");
 			shanchu1(head);
 			fflush(stdin);
-			printf("\n\n\t\t\t\t\t°´ÈÎÒâ¼ü·µ»Ø¹¦ÄÜ½çÃæ\n");
+			printf("\n\n\t\t\t\t\tæŒ‰ä»»æ„é”®è¿”å›žåŠŸèƒ½ç•Œé¢\n");
 			getch(); 
 			system("cls");
 			cutout(); 
@@ -295,18 +295,18 @@ void cutout()
 			
 	}
 }
-//ÅÅÐòÒ³Ãæ
+//æŽ’åºé¡µé¢
 void sort()
 {
 	int choice;
-	printf("\n\n\t\t\t\t\t                Ñ§ÉúÐÅÏ¢ÅÅÐò              \n");
-	printf("\n\t\t\t\t\t|          1.°´ÕÕÑ§Éú×ÜµÃ·ÖÅÅÐò         |");
+	printf("\n\n\t\t\t\t\t                å­¦ç”Ÿä¿¡æ¯æŽ’åº              \n");
+	printf("\n\t\t\t\t\t|          1.æŒ‰ç…§å­¦ç”Ÿæ€»å¾—åˆ†æŽ’åº         |");
 	printf("\n\t\t\t\t\t|                                       |");
 	printf("\n\t\t\t\t\t|                                       |");
-	printf("\n\t\t\t\t\t|          2.·µ»ØÉÏÒ»²ã                 |");
+	printf("\n\t\t\t\t\t|          2.è¿”å›žä¸Šä¸€å±‚                 |");
 	printf("\n\t\t\t\t\t|                                       |");
 	printf("\n\t\t\t\t\t|_______________________________________|");
-	printf("\n\t\t\t\t\tÇëÊäÈë:");
+	printf("\n\t\t\t\t\tè¯·è¾“å…¥:");
 	scanf("%d",&choice);
 	switch(choice)
 	{
@@ -314,7 +314,7 @@ void sort()
 			system("cls");
 			
 			fflush(stdin);
-			printf("\n\n\t\t\t\t\t°´ÈÎÒâ¼ü·µ»ØÅÅÐò½çÃæ\n");
+			printf("\n\n\t\t\t\t\tæŒ‰ä»»æ„é”®è¿”å›žæŽ’åºç•Œé¢\n");
 			getch(); 
 			system("cls");
 			sort();
@@ -328,22 +328,22 @@ void sort()
 			
 	 } 
  } 
-//°´ÇòÔ±×ÜµÃ·ÖÅÅÐò
+//æŒ‰çƒå‘˜æ€»å¾—åˆ†æŽ’åº
 void sumpaixu(struct xs* head)
 {
 	int choice,count=0,i,j;
 	struct xs *p1=head,*p2,*temp,*t;
-	printf("\n\t\t\t\t\t            °´ÕÕÑ§Éú×ÜµÃ·ÖÅÅÐò        \n ");
+	printf("\n\t\t\t\t\t            æŒ‰ç…§å­¦ç”Ÿæ€»å¾—åˆ†æŽ’åº        \n ");
 	printf("\n\t\t\t\t\t|                                       |");
-	printf("\n\t\t\t\t\t|           1.ÉýÐò                      |");
+	printf("\n\t\t\t\t\t|           1.å‡åº                      |");
 	printf("\n\t\t\t\t\t|                                       |");
-	printf("\n\t\t\t\t\t|           2.½µÐò                      |");
+	printf("\n\t\t\t\t\t|           2.é™åº                      |");
 	printf("\n\t\t\t\t\t|                                       |");
-	printf("\n\t\t\t\t\t|           3.·µ»ØÉÏÒ»²ã                |"); 
+	printf("\n\t\t\t\t\t|           3.è¿”å›žä¸Šä¸€å±‚                |"); 
 	printf("\n\t\t\t\t\t|                                       |");
-	printf("\n\t\t\t\t\t|           4.ÍË³ö                      |");
+	printf("\n\t\t\t\t\t|           4.é€€å‡º                      |");
 	printf("\n\t\t\t\t\t|_______________________________________|");
-	printf("\n\t\t\t\t\tÇëÑ¡Ôñ:");
+	printf("\n\t\t\t\t\tè¯·é€‰æ‹©:");
 	scanf("%d",&choice);
 	while(p1=p1->next)
 		count++;
@@ -373,7 +373,7 @@ void sumpaixu(struct xs* head)
 						temp=temp->next;
 					}
 				}
-				printf("\n\n\t\t\t\t\tÕýÐòÅÅÁÐÎª:");
+				printf("\n\n\t\t\t\t\tæ­£åºæŽ’åˆ—ä¸º:");
 				print(head);
 			}
 			break;
@@ -401,14 +401,14 @@ void sumpaixu(struct xs* head)
 						temp=temp->next;
 					}	
 				}
-				printf("\n\n\t\t\t\t\tÄæÐòÅÅÁÐÎª:");
+				printf("\n\n\t\t\t\t\té€†åºæŽ’åˆ—ä¸º:");
 				print(head);		
 			}
 			break;
 		case 3:
 			system("cls");
 			fflush(stdin);
-			printf("\n\n\t\t\t\t\t°´ÈÎÒâ¼ü·µ»ØÉÏÒ»²ã\n");
+			printf("\n\n\t\t\t\t\tæŒ‰ä»»æ„é”®è¿”å›žä¸Šä¸€å±‚\n");
 			getch(); 
 			system("cls");	
 			sort();
@@ -420,24 +420,24 @@ void sumpaixu(struct xs* head)
 	
 
 
-//¸ù¾ÝÑ§ÉúÃû³Æ¼°ºÅÂë»ìºÏ²éÕÒ
+//æ ¹æ®å­¦ç”Ÿåç§°åŠå·ç æ··åˆæŸ¥æ‰¾
 void mixlooking(struct xs *p)
 {
 	char membername[20];
 	int haoma;
 	int flag=0;
 	struct xs *p1=p->next;
-	printf("\n\n\t\t\t\t\tÇëÊäÈëÑ§ÉúÐÕÃû");
+	printf("\n\n\t\t\t\t\tè¯·è¾“å…¥å­¦ç”Ÿå§“å");
 	fflush(stdin);
 	gets(membername);
-	printf("\n\n\t\t\t\t\tÇëÊäÈëÑ§ÉúºÅÂë");
+	printf("\n\n\t\t\t\t\tè¯·è¾“å…¥å­¦ç”Ÿå·ç ");
 	fflush(stdin);
 	scanf("%d",&haoma);
 	while(p1->next!=NULL)
 	{
 		if(strcmp(p1->name,membername)==0 && p1->number==haoma)
 		{
-			printf("             \nÕÒµ½ÁË!");
+			printf("             \næ‰¾åˆ°äº†!");
 			flag=1;
 			printf("\n\n\t\t\t\t\t%d\n",p1->number);
 			printf("\n\n\t\t\t\t\t%s\n",p1->name);
@@ -448,75 +448,75 @@ void mixlooking(struct xs *p)
 	}
 	if(flag==0)
 	{
-		printf("Ã»ÕÒµ½£¡");
+		printf("æ²¡æ‰¾åˆ°ï¼");
 		
 	}
  } 
-//¸ù¾ÝxsÃû³Æ²éÕÒ
+//æ ¹æ®xsåç§°æŸ¥æ‰¾
 void lookingname(struct xs *p)
 {
 	struct xs *p1=p->next;
 	char membername[20];
 	int flag=0;
-	printf("\n\n\t\t\t\t\tÇëÊäÈëÒª²éÑ¯µÄÑ§ÉúÐÕÃû:");
+	printf("\n\n\t\t\t\t\tè¯·è¾“å…¥è¦æŸ¥è¯¢çš„å­¦ç”Ÿå§“å:");
 	scanf("%s",membername);
 	while(p1!=NULL) 
 	{
 		if(strcmp(p1->name,membername)==0)
 		{
-			printf("             \nÕÒµ½ÁË!");
+			printf("             \næ‰¾åˆ°äº†!");
 			flag=1;
 			printf("\t\t") ;
 			printf("\n");
-			printf("\n\n\t\t\t\t\tÑ§ÉúÃû³Æ:%s\n",p1->name);
-			printf("\n\n\t\t\t\t\tÑ§ÉúºÅÂë:%d\n",p1->number);
-			printf("\n\n\t\t\t\t\tÑ§Éú×Ü·Ö:%d\n",p1->sum);
+			printf("\n\n\t\t\t\t\tå­¦ç”Ÿåç§°:%s\n",p1->name);
+			printf("\n\n\t\t\t\t\tå­¦ç”Ÿå·ç :%d\n",p1->number);
+			printf("\n\n\t\t\t\t\tå­¦ç”Ÿæ€»åˆ†:%d\n",p1->sum);
 		}
 		p1=p1->next;
 		if(flag==0)
 		{
-			printf("Ã»ÕÒµ½£¡");
+			printf("æ²¡æ‰¾åˆ°ï¼");
 			
 		}
 	}
  } 
-//¸ù¾ÝÑ§ÉúºÅÂë²éÕÒ
+//æ ¹æ®å­¦ç”Ÿå·ç æŸ¥æ‰¾
 void lookingnumber(struct xs *p)
 {
 	struct xs *p1=p->next;
 	int haoma;
 	int flag=0;
-	printf("\n\n\t\t\t\t\tÇëÊäÈëÒª²éÑ¯µÄÑ§ÉúºÅÂë:");
+	printf("\n\n\t\t\t\t\tè¯·è¾“å…¥è¦æŸ¥è¯¢çš„å­¦ç”Ÿå·ç :");
 	scanf("%d",&haoma);
 	while(p1!=NULL)
 	{
 		if(p1->number==haoma);
 		{
-			printf("             \nÕÒµ½ÁË!");
+			printf("             \næ‰¾åˆ°äº†!");
 			flag=1;
 			printf("\t\t") ;
 			printf("\n");
-			printf("\n\n\t\t\t\t\tÑ§ÉúÃû³Æ:%s\n",p1->name);
-			printf("\n\n\t\t\t\t\tÑ§ÉúºÅÂë:%d\n",p1->number);
-			printf("\n\n\t\t\t\t\tÑ§Éú×Ü·Ö:%d\n",p1->sum);
+			printf("\n\n\t\t\t\t\tå­¦ç”Ÿåç§°:%s\n",p1->name);
+			printf("\n\n\t\t\t\t\tå­¦ç”Ÿå·ç :%d\n",p1->number);
+			printf("\n\n\t\t\t\t\tå­¦ç”Ÿæ€»åˆ†:%d\n",p1->sum);
 		}
 		p1=p1->next;
 		if(flag==0)
 		{
-			printf("Ã»ÕÒµ½£¡");
+			printf("æ²¡æ‰¾åˆ°ï¼");
 			
 		}
 	}
  }
-//É¾³ý(É¾³ýÃû³Æ) 
+//åˆ é™¤(åˆ é™¤åç§°) 
 void shanchu1(struct xs *p0)
 {
 	char mingzi[10];
 	int flag=0;
-	printf("\n\n\t\t\t\t\tÇëÊäÈëÒªÉ¾³ýµÄÑ§ÉúÃû³Æ:");
+	printf("\n\n\t\t\t\t\tè¯·è¾“å…¥è¦åˆ é™¤çš„å­¦ç”Ÿåç§°:");
 	scanf("%s",mingzi);
 	struct xs *p=p0;
-	if(p==NULL)  printf("\n\n\t\t\t\t\tÁ´±íÎª¿Õ£¬ÕÒ²»µ½´ËÈËÎï");
+	if(p==NULL)  printf("\n\n\t\t\t\t\té“¾è¡¨ä¸ºç©ºï¼Œæ‰¾ä¸åˆ°æ­¤äººç‰©");
 	while(p->next!=NULL)
 	{
 		if(strcmp(p->next->name,mingzi)==0)
@@ -524,55 +524,55 @@ void shanchu1(struct xs *p0)
 			struct xs *q=p->next;
 			p->next=q->next;
 			free(q);
-			printf("É¾³ý³É¹¦!");
+			printf("åˆ é™¤æˆåŠŸ!");
 			return;
 		}
 		p=p->next;
 	}
 	if(flag==0)
 	{
-		printf("\n\n\t\t\t\t\tÎ´ÕÒµ½É¾³ýµÄ½Úµã");
+		printf("\n\n\t\t\t\t\tæœªæ‰¾åˆ°åˆ é™¤çš„èŠ‚ç‚¹");
 		
 	 } 
  }
-//ÐÞ¸Ä
+//ä¿®æ”¹
 void change(struct xs *p)
 {
 	int num2,choice; 
 	char qiuyuan[20];
 	struct xs *p1=p->next;
-	printf("\n\n\t\t\t\t\t|                 ÐÞ¸ÄÐÅÏ¢            |\n ");
-	printf("\n\t\t\t\t\t|            1.Í¨¹ýÑ§ÉúºÅÂë²éÕÒ         |");
+	printf("\n\n\t\t\t\t\t|                 ä¿®æ”¹ä¿¡æ¯            |\n ");
+	printf("\n\t\t\t\t\t|            1.é€šè¿‡å­¦ç”Ÿå·ç æŸ¥æ‰¾         |");
 	printf("\n\t\t\t\t\t|                                       |");
-	printf("\n\t\t\t\t\t|            2.Í¨¹ýÑ§ÉúÃû³Æ²éÕÒ         |");
+	printf("\n\t\t\t\t\t|            2.é€šè¿‡å­¦ç”Ÿåç§°æŸ¥æ‰¾         |");
 	printf("\n\t\t\t\t\t|_______________________________________|");
-	printf("\n\t\t\t\t\tÇëÊäÈëÑ¡Ôñ£º");
+	printf("\n\t\t\t\t\tè¯·è¾“å…¥é€‰æ‹©ï¼š");
 	scanf("%d",&choice);
 	if(choice==1)
 	{
-		printf("\n\n\t\t\t\t\tÇëÊäÈëÒª¸Ä±äµÄÑ§ÉúºÅÂë:");
+		printf("\n\n\t\t\t\t\tè¯·è¾“å…¥è¦æ”¹å˜çš„å­¦ç”Ÿå·ç :");
 		scanf("%d",&num2); 
 		while(1)
 		{
 			if(p1==NULL)
 			{
-				printf("\n\n\t\t\t\t\tÁ´±íÎª¿Õ£¬²éÕÒ²»µ½");
+				printf("\n\n\t\t\t\t\té“¾è¡¨ä¸ºç©ºï¼ŒæŸ¥æ‰¾ä¸åˆ°");
 				break;
 			}
 			if(num2!=p1->number)
 				p1=p1->next;
 			else
 			{
-				printf("\n\n\t\t\t\t\tÇëÊäÈëÒªÐÞ¸ÄµÄÑ¡Ïî:");
-				printf("\n\t\t\t\t\t|          1.Ñ§ÉúÃû³Æ                   |");
+				printf("\n\n\t\t\t\t\tè¯·è¾“å…¥è¦ä¿®æ”¹çš„é€‰é¡¹:");
+				printf("\n\t\t\t\t\t|          1.å­¦ç”Ÿåç§°                   |");
 				printf("\n\t\t\t\t\t|                                       |");
-				printf("\n\t\t\t\t\t|          2.Ñ§ÉúºÅÂë                   |");
+				printf("\n\t\t\t\t\t|          2.å­¦ç”Ÿå·ç                    |");
 				printf("\n\t\t\t\t\t|                                       |");
-				printf("\n\t\t\t\t\t|          3.Ñ§ÉúµÃ·Ö                   |");
+				printf("\n\t\t\t\t\t|          3.å­¦ç”Ÿå¾—åˆ†                   |");
 				printf("\n\t\t\t\t\t|_______________________________________|"); 
-				printf("\n\t\t\t\t\tÇëÊäÈëÐÞ¸ÄÏî:");
+				printf("\n\t\t\t\t\tè¯·è¾“å…¥ä¿®æ”¹é¡¹:");
 				scanf("%d",&choice);
-				printf("\t\t\t\t\tÇëÊäÈëÐÞ¸ÄºóµÄÄÚÈÝ:");
+				printf("\t\t\t\t\tè¯·è¾“å…¥ä¿®æ”¹åŽçš„å†…å®¹:");
 				switch(choice)
 				{
 					case 1:
@@ -585,7 +585,7 @@ void change(struct xs *p)
 						scanf("%d",&p1->sum);
 						break;
 				} 
-				printf("\n\n\t\t\t\t\tÐÞ¸Ä³É¹¦!");
+				printf("\n\n\t\t\t\t\tä¿®æ”¹æˆåŠŸ!");
 				break;
 				
 			}
@@ -595,29 +595,29 @@ void change(struct xs *p)
 	}
 	if(choice==2)
 	{
-		printf("\n\n\t\t\t\t\tÇëÊäÈëÒª¸Ä±äµÄÑ§ÉúÃû³Æ:");
+		printf("\n\n\t\t\t\t\tè¯·è¾“å…¥è¦æ”¹å˜çš„å­¦ç”Ÿåç§°:");
 		scanf("%s",qiuyuan); 
 		while(1)
 		{
 			if(p1==NULL)
 			{
-				printf("\n\n\t\t\t\t\tÁ´±íÎª¿Õ£¬²éÕÒ²»µ½");
+				printf("\n\n\t\t\t\t\té“¾è¡¨ä¸ºç©ºï¼ŒæŸ¥æ‰¾ä¸åˆ°");
 				break;
 			}
 			if(strcmp(p1->name,qiuyuan)==0)
 				p1=p1->next;
 			else
 			{
-				printf("\n\n\t\t\t\t\tÇëÊäÈëÒªÐÞ¸ÄµÄÑ¡Ïî:");
-				printf("\n\t\t\t\t\t|          1.Ñ§ÉúÃû³Æ                   |");
+				printf("\n\n\t\t\t\t\tè¯·è¾“å…¥è¦ä¿®æ”¹çš„é€‰é¡¹:");
+				printf("\n\t\t\t\t\t|          1.å­¦ç”Ÿåç§°                   |");
 				printf("\n\t\t\t\t\t|                                       |");
-				printf("\n\t\t\t\t\t|          2.Ñ§ÉúºÅÂë                   |");
+				printf("\n\t\t\t\t\t|          2.å­¦ç”Ÿå·ç                    |");
 				printf("\n\t\t\t\t\t|                                       |");
-				printf("\n\t\t\t\t\t|          3.Ñ§ÉúµÃ·Ö                   |");
+				printf("\n\t\t\t\t\t|          3.å­¦ç”Ÿå¾—åˆ†                   |");
 				printf("\n\t\t\t\t\t|_______________________________________|"); 
-	  			printf("\n\t\t\t\t\tÇëÊäÈëÐÞ¸ÄÏî:");
+	  			printf("\n\t\t\t\t\tè¯·è¾“å…¥ä¿®æ”¹é¡¹:");
 				scanf("%d",&choice);
-				printf("\t\t\t\t\tÇëÊäÈëÐÞ¸ÄºóµÄÄÚÈÝ:");
+				printf("\t\t\t\t\tè¯·è¾“å…¥ä¿®æ”¹åŽçš„å†…å®¹:");
 				switch(choice)
 				{
 					case 1:
@@ -630,7 +630,7 @@ void change(struct xs *p)
 						scanf("%d",&p1->sum);
 						break;
 				} 
-				printf("\n\n\t\t\t\t\tÐÞ¸Ä³É¹¦!");
+				printf("\n\n\t\t\t\t\tä¿®æ”¹æˆåŠŸ!");
 				break;
 				
 			}
@@ -638,7 +638,7 @@ void change(struct xs *p)
 	}	
 	
  }
-//Ð´ÎÄ¼þ
+//å†™æ–‡ä»¶
 void writefile()
 {
 	FILE *user;
@@ -651,7 +651,7 @@ void writefile()
 	}
 	fclose(user);	
  } 
- //¶ÁÎÄ¼þ 
+ //è¯»æ–‡ä»¶ 
 void readfile() 
 {
 	FILE *user;
@@ -674,7 +674,7 @@ void readfile()
 	p->next=NULL;
 	fclose(user);	
 }
-//µÇÂ¼ 
+//ç™»å½• 
 void denglu()
 {
 	FILE *fp;
@@ -685,23 +685,23 @@ void denglu()
 	char name[20];
 	int	flag=0;
 	fp=fopen("userdata.txt","r");
-	printf("\n\n\t\t\t\t\t              ÓÃ»§µÇÂ¼         \n\n");
+	printf("\n\n\t\t\t\t\t              ç”¨æˆ·ç™»å½•         \n\n");
 	if(fp== NULL)
 	{
-		printf("\n\n\t\t\t\t\tÎÄ¼þÎª¿Õ£¬ÇëÏÈÈ¥×¢²á!");
+		printf("\n\n\t\t\t\t\tæ–‡ä»¶ä¸ºç©ºï¼Œè¯·å…ˆåŽ»æ³¨å†Œ!");
 		system("cls");
-		printf("\n\n\t\t\t\t\tÊÇ·ñÑ¡ÔñÈ¥×¢²á(Y/N)");
+		printf("\n\n\t\t\t\t\tæ˜¯å¦é€‰æ‹©åŽ»æ³¨å†Œ(Y/N)");
 		getchar();
 		if(getchar() =='Y')////////////////
-			zhuce();	//×ªÒÆµ½×¢²á½çÃæ	 
+			zhuce();	//è½¬ç§»åˆ°æ³¨å†Œç•Œé¢	 
 	}
 	fclose(fp); 
 	do
 	{
 		fp=fopen("userdata.txt","r");
-		printf("\n\n\t\t\t\t\t  ÇëÊäÈëÓÃ»§Ãû:");
+		printf("\n\n\t\t\t\t\t  è¯·è¾“å…¥ç”¨æˆ·å:");
 		scanf("%s",name);
-		printf("\n\n\t\t\t\t\t  ÇëÊäÈëÃÜÂë:");
+		printf("\n\n\t\t\t\t\t  è¯·è¾“å…¥å¯†ç :");
 		while((ch=getch())!='\r')
 		{
 			if(ch=='\b')
@@ -722,7 +722,7 @@ void denglu()
 		code[i]='\0';
 		while(!feof(fp))
 		{
-			fscanf(fp,"%s %s\n",a.username,a.usermima);  //¶Á³ö    /////////////////
+			fscanf(fp,"%s %s\n",a.username,a.usermima);  //è¯»å‡º    /////////////////
 			if(strcmp(name,a.username)==0 && strcmp(code,a.usermima)==0)
 			{
 				flag=1;
@@ -732,25 +732,25 @@ void denglu()
 		fclose(fp);
 		if(flag)
 		{
-			printf("  \n\n\t\t\t\t\t      µÇÂ½³É¹¦£¡\n");
+			printf("  \n\n\t\t\t\t\t      ç™»é™†æˆåŠŸï¼\n");
 			Sleep(1000);
 			break;
 		}
 		else
 		{
-			printf("\n\t\n\n\t\t\t\t\tÄúÊäÈëµÄÃÜÂë²»ÕýÈ·£¡\n");
-			printf("\n\n\t\t\t\t\tÊÇ·ñÒª¼ÌÐøµÇÂ½?(Y/N)");
+			printf("\n\t\n\n\t\t\t\t\tæ‚¨è¾“å…¥çš„å¯†ç ä¸æ­£ç¡®ï¼\n");
+			printf("\n\n\t\t\t\t\tæ˜¯å¦è¦ç»§ç»­ç™»é™†?(Y/N)");
 			fflush(stdin);
 			ch=getchar();
 			if(ch!='Y'){
 				face();	
 			}
-				//·µ»ØÔ­À´½çÃæ 		
+				//è¿”å›žåŽŸæ¥ç•Œé¢ 		
 		}
 		
 	}while(ch=='Y');
 }
-//×¢²á
+//æ³¨å†Œ
 void zhuce()
 {
 	
@@ -763,9 +763,9 @@ void zhuce()
 	char code2[20];
 	while(1)
 	{	
-		printf("\n\n\t\t\t\t\t              »¶Ó­Ê¹ÓÃÑ§Éú¹ÜÀíÏµÍ³!        \n\n");
-		printf("\n\n\t\t\t\t\t                 ÓÃ»§×¢²á     \n");
-		printf("\n\n\t\t\t\t\tÇëÊäÈëÓÃ»§Ãû£º");
+		printf("\n\n\t\t\t\t\t              æ¬¢è¿Žä½¿ç”¨å­¦ç”Ÿç®¡ç†ç³»ç»Ÿ!        \n\n");
+		printf("\n\n\t\t\t\t\t                 ç”¨æˆ·æ³¨å†Œ     \n");
+		printf("\n\n\t\t\t\t\tè¯·è¾“å…¥ç”¨æˆ·åï¼š");
 		scanf("%s",name);
 		fflush(stdin); /////////// 
 		fp= fopen("userdata.txt","r");
@@ -778,7 +778,7 @@ void zhuce()
 		flag=0;
 		while(!feof(fp))
 		{
-			fscanf(fp,"%s %s\n",a.username,a.usermima);//¶Á                       /////// 
+			fscanf(fp,"%s %s\n",a.username,a.usermima);//è¯»                       /////// 
 			if(strcmp(a.username,name)==0)
 			{
 				flag=1;
@@ -788,7 +788,7 @@ void zhuce()
 		fclose(fp);
 		if(flag==1)
 		{
-			printf("\n\n\n\n\n\t\t\t\t\t\t¸ÃÓÃ»§ÃûÒÑ´æÔÚ£¡"); 
+			printf("\n\n\n\n\n\t\t\t\t\t\tè¯¥ç”¨æˆ·åå·²å­˜åœ¨ï¼"); 
 			Sleep(1000);
 			system("cls");
 		}
@@ -797,7 +797,7 @@ void zhuce()
 			
 			while(1)
 			{
-				printf("\n\t\t\t\t\tÇëÊäÈëÃÜÂë£º  ");
+				printf("\n\t\t\t\t\tè¯·è¾“å…¥å¯†ç ï¼š  ");
 				while((ch=getch())!='\r')
 				{
 					if(ch=='\b')
@@ -817,7 +817,7 @@ void zhuce()
 				code1[i]='\0';
 				i=0;
 				j=0;
-				printf("\n\n\t\t\t\t\tÇëÈ·ÈÏÃÜÂë:   "); 
+				printf("\n\n\t\t\t\t\tè¯·ç¡®è®¤å¯†ç :   "); 
 				while((bh=getch())!='\r')
 				{
 					if(bh=='\b')
@@ -845,8 +845,8 @@ void zhuce()
 					break;
 				}
 			}
-			printf("\n\n\n\t\t\t\t\t\t ×¢²á³É¹¦£¡");
-			printf("\n\n\t\t\t\t\tÊÇ·ñ¼ÌÐø×¢²á:(N)");
+			printf("\n\n\n\t\t\t\t\t\t æ³¨å†ŒæˆåŠŸï¼");
+			printf("\n\n\t\t\t\t\tæ˜¯å¦ç»§ç»­æ³¨å†Œ:(N)");
 			fflush(stdin); 
 			if(getchar()=='N')
 				break;
@@ -857,13 +857,13 @@ void zhuce()
 	}
 			
  } 
-//´òÓ¡
+//æ‰“å°
 void  print(struct xs *head) 
 {
 	struct xs *p1 = head->next;
 	printf("\n\n\n\n\n");
 	printf("\t\t") ;
-	printf("Ñ§ÉúÐÕÃû  Ñ§Éú±àºÅ  µÃ·ÖÊý\n");
+	printf("å­¦ç”Ÿå§“å  å­¦ç”Ÿç¼–å·  å¾—åˆ†æ•°\n");
 	while(p1 != NULL)
 	{       
 		printf("\n\t\t%-10s %-3d %-10d ",p1->name,p1->number,p1->sum);
@@ -871,7 +871,7 @@ void  print(struct xs *head)
 	}
 }             
 		
-//²åÈë
+//æ’å…¥
 void charu(struct xs* p0)
 {
 	int i,j=1;
@@ -879,19 +879,19 @@ void charu(struct xs* p0)
 	struct xs *p,*p1,*p2;
 	int count=tongji(p0);
 	p=(struct xs*)malloc(sizeof(struct xs));
-	printf("\n\n\t\t\t\t\t|           »¶Ó­Ê¹ÓÃÑ§Éú¹ÜÀíÏµÍ³            |\n");
+	printf("\n\n\t\t\t\t\t|           æ¬¢è¿Žä½¿ç”¨å­¦ç”Ÿç®¡ç†ç³»ç»Ÿ            |\n");
 	do
 	{	
-		printf("\n\n\t\t\t\t\tÇëÊäÈëÄãÒª²åÈëµÄÎ»ÖÃ:\t");
+		printf("\n\n\t\t\t\t\tè¯·è¾“å…¥ä½ è¦æ’å…¥çš„ä½ç½®:\t");
 		scanf("%d",&i);
-		if(i==1)  //Í·²å
+		if(i==1)  //å¤´æ’
 		{ 
 			addxs(p); 
 			p->next=p0->next;
 			p0->next=p;
-			printf("\n\n\t\t\t\t\tÌí¼Ó³É¹¦!\n");	
+			printf("\n\n\t\t\t\t\tæ·»åŠ æˆåŠŸ!\n");	
 		} 
-		else if(i>=count) //Î²²å
+		else if(i>=count) //å°¾æ’
 		{
 			p1=p0;
 			while(p1->next!=NULL)
@@ -901,7 +901,7 @@ void charu(struct xs* p0)
 			addxs(p); 
 			p1->next=p;
 			p->next=NULL;
-			printf("\n\n\t\t\t\t\tÌí¼Ó³É¹¦!\n");	
+			printf("\n\n\t\t\t\t\tæ·»åŠ æˆåŠŸ!\n");	
 		 } 
 		else
 		{
@@ -917,17 +917,17 @@ void charu(struct xs* p0)
 					addxs(p); 
 					p->next=p2;
 					p1->next=p;
-					printf("\n\n\t\t\t\t\tÌí¼Ó³É¹¦!\n");	
+					printf("\n\n\t\t\t\t\tæ·»åŠ æˆåŠŸ!\n");	
 				}	
 			}	
 		}
-		printf("\n\n\t\t\t\t\tÊÇ·ñÒª¼ÌÐøÌí¼Ó:");
+		printf("\n\n\t\t\t\t\tæ˜¯å¦è¦ç»§ç»­æ·»åŠ :");
 		fflush(stdin);
 		ch=getchar();
 		
 	}while(ch=='Y' || ch=='N');
 }
-//Ö÷º¯Êý
+//ä¸»å‡½æ•°
 int main()
 {
 	head->next =NULL;
