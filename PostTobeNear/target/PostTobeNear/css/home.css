@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+.tabBar {
+  background-color: #18dcff;
+  height: 50px;
+  position: relative;
+  line-height: 50px;
+}
+
+.userPage {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border: 2px solid white;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  margin-left: 10px;
+  transform: translateY(-50%);
+}
+
+.userPage svg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.appName {
+  width: 200px;
+  text-align: center;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.swiper-container img {
+  width: 100%;
+}
+
+.toolBar {
+  display: flex;
+  height: 100px;
+  text-align: center;
+}
+
+.overbooking,.orderTaking  {
+  flex: 1;
+  background-color: #18dcff;
+  margin: 10px;
+  line-height: 80px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 8px;
+}
+.slideBar {
+  /* display: none; */
+  background-color: #18dcff;
+  position: fixed;
+  top: 0;
+  left: -70%;
+  bottom: 0;
+  z-index: 99;
+  width: 60%;
+  border-right: 2px solid white;
+  color: white;
+  box-shadow: 10px 0px 15px rgba(0, 0, 0, .5);
+}
+@keyframes showSlideBar{
+  from{
+    left: -70%;
+  }
+  to{
+    left: 0;
+  }
+}
+@keyframes hiddenSlideBar{
+  from{
+    left: 0;
+  }
+  to{
+    left: -70%;
+  }
+}
+.showSlide{
+  animation: showSlideBar 1.5s forwards;
+}
+.hiddenSlide{
+  animation: hiddenSlideBar 1.5s forwards;
+}
+.close {
+  float: right;
+  height: 30px;
+  width: 30px;
+  line-height: 30px;
+}
+
+.close::before {
+  content: "";
+  display: block;
+  clear: both;
+  height: 0;
+  visibility: hidden;
+}
+
+.slideList {
+  padding: 50px 20px;
+  height: 50%;
+}
+
+.slideList>li {
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 1px solid white;
+}
+.slideList>li>a{
+  display: inline-block;
+  color: white;
+  width: 100%;
+}
+.icon {
+  vertical-align: middle;
+  margin-right: 10px;
+}

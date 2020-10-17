@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/overbooking.css">
+</head>
+
+<body>
+  <div id="app">
+    <div class="tabBar">
+      <a href="./home.html" class="userPage">
+        <svg t="1601956025993" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+          p-id="3287" data-spm-anchor-id="a313x.7781069.0.i0" width="18" height="18">
+          <path
+            d="M768 951.4L337.815 530.15c-10.237-10.031-10.237-26.278 0-36.303L768 72.59V0L263.678 493.848c-10.237 10.024-10.237 26.271 0 36.303L768 1024v-72.6z"
+            fill="#ffffff" p-id="3288"></path>
+        </svg>
+      </a>
+      <span class="appName">我要下单</span>
+    </div>
+    <div class="order">
+      <form method="POST" action="PostOrder" class="orderBox" onsubmit="return overbooking()">
+        <label for="type">
+          <span class="name">类型</span>
+          <select id="type" class="handle" name="type">
+            <option value="代取快递">代取快递</option>
+            <option value="食堂带饭">食堂带饭</option>
+            <option value="外出代购">外出代购</option>
+            <option value="图书馆占座">图书馆占座</option>
+            <option value="其他">其他</option>
+          </select>
+        </label>
+        <label for="money">
+          <span class="name">金额</span>
+          <input type="number" value="1" min="1" max="5" name="money" id="money" class="handle">
+        </label>
+        <label for="time">
+          <span class="name">时间</span>
+          <input type="datetime-local" name="time" id="time" class="handle">
+        </label>
+        <label for="describe">
+          <span class="name">描述</span>
+          <textarea name="description" placeholder="请输入描述" class="handle" id="describe" cols="30" rows="5"></textarea>
+        </label>
+        <div class="errorMsg"></div>
+        <button type="submit" class="overbooking">我要下单</button>
+      </form>
+    </div>
+  </div>
+  <script src="./js/jquery.min.js"></script>
+  <script type="application/javascript">
+    //发送表单ajax请求
+    $('.overbooking').on('click', function () {
+      $.ajax({
+        url: "PostOrder",
+        type: "POST",
+        // data: JSON.stringify($('form').serializeObject()),
+        data: JSON.stringify(serializeObject($(this))),
+        //dataType:"json",
+        contentType: "application/json;charset = utf-8",  //缺失会出现URL编码，无法转成json对象
+        success: function () {
+          alert("成功"+this.data);
+        }
+      });
+    });
+
+    /**
+     * 自动将form表单封装成json对象
+     */
+     function serializeObject (obj){
+        var result = {};
+        var params = obj.serializeArray();
+        $.each(params, function(index, value){
+            result[value.name] = value.value;
+        })
+
+        return result;
+    }
+    // $.fn.serializeObject = function () {
+    //   var o = {};
+    //   var a = this.serializeArray();
+    //   $.each(a, function () {
+    //     if (o[this.name]) {
+    //       if (!o[this.name].push) {
+    //         o[this.name] = [o[this.name]];
+    //       }
+    //       o[this.name].push(this.value || '');
+    //     } else {
+    //       o[this.name] = this.value || '';
+    //     }
+    //   });
+    //   return o;
+    // };
+  </script>
+  <script src="./js/overbooking.js"></script>
+</body>
+
+</html>
